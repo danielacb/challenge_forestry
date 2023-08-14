@@ -1,0 +1,19 @@
+@import '/src/styles/breakpoints.scss';
+
+.statistics {
+  grid-column: 1 / -1;
+
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  gap: var(--space-x-large);
+}
+
+@media (min-width: $desktop-breakpoint) {
+  .statistics {
+    margin-bottom: 100px;
+    overflow-x: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

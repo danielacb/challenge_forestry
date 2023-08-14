@@ -1,0 +1,76 @@
+@import '/src/styles/breakpoints.scss';
+
+.heroImage {
+  grid-column: 1 / -1;
+  height: 448px;
+  overflow: hidden;
+
+  background-image: url('/hero.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.textContainer {
+  grid-column: 1 / -1;
+  margin-top: -180px;
+  background-color: var(--white);
+  padding: 30px;
+  margin-left: 12px;
+  margin-right: 12px;
+
+  h1 {
+    margin-bottom: var(--space-large);
+  }
+}
+
+.links {
+  grid-column: 1 / -1;
+  margin-top: 32px;
+  margin-bottom: 48px;
+}
+
+@media (min-width: $desktop-breakpoint) {
+  .textContainer {
+    grid-column: 3 / -1;
+    padding: var(--space-x-large);
+    max-width: 650px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .links {
+    grid-column: 3 / -3;
+    display: grid;
+    column-gap: var(--space-x-large);
+    grid-template-columns: 1fr 1fr;
+
+    margin-top: 70px;
+    margin-bottom: 104px;
+
+    a:nth-child(2),
+    a:nth-child(3) {
+      grid-column: 1;
+    }
+
+    a:nth-child(2),
+    a:nth-child(6) {
+      grid-row: 2;
+    }
+
+    a:nth-child(5),
+    a:nth-child(6),
+    a:nth-child(7) {
+      grid-row: 2;
+    }
+
+    a:nth-child(5) {
+      grid-row: 1;
+    }
+
+    a:nth-child(3),
+    a:nth-child(7) {
+      grid-row: 3;
+    }
+  }
+}

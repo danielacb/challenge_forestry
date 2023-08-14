@@ -125,6 +125,14 @@ a {
   text-decoration: none;
 }
 
+p {
+  line-height: 160%;
+}
+
+p.lead {
+  font-size: 1.25rem;
+}
+
 ul,
 ol,
 menu {
@@ -149,6 +157,10 @@ menu {
   .subheading {
     font-size: 1.125rem;
   }
+
+  p.lead {
+    font-size: 1.375rem;
+  }
 }
 
 @media (min-width: $desktop-breakpoint) {
@@ -170,6 +182,9 @@ menu {
   }
   a {
     font-size: 1.125rem;
+  }
+  p.lead {
+    font-size: 1.5rem;
   }
 }
 
