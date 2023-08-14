@@ -1,0 +1,108 @@
+@import '/src/styles/breakpoints.scss';
+
+.button {
+  padding: 13px 16px;
+  margin: 4px;
+
+  font-size: 1rem;
+  line-height: 120%;
+  border-radius: 12px;
+  border: 2px solid transparent;
+
+  outline-offset: 4px;
+  outline: 2px solid transparent;
+
+  &.primary {
+    color: var(--white);
+    background-color: var(--black);
+  }
+
+  &.secondary {
+    color: var(--black);
+    border-color: var(--black);
+    background-color: transparent;
+  }
+
+  &.search {
+    background-color: transparent;
+    span {
+      display: none;
+    }
+    svg {
+      margin-left: 0;
+    }
+  }
+
+  &:focus {
+    outline-color: var(--black);
+  }
+
+  svg {
+    display: inline;
+    margin-top: -3px;
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+}
+
+@media (min-width: $desktop-breakpoint) {
+  .button {
+    border-radius: 16px;
+    padding: 16px 32px;
+    font-size: 1.125rem;
+
+    &.search {
+      outline-offset: -2px;
+
+      span {
+        display: inline;
+      }
+    }
+
+    & svg,
+    &.search svg {
+      margin-left: 12px;
+    }
+  }
+}
+
+@media (hover: hover) {
+  button {
+    &,
+    svg {
+      transition: 0.4s;
+    }
+  }
+
+  button {
+    cursor: pointer;
+
+    &.primary:hover {
+      color: var(--black);
+      background-color: transparent;
+      border-color: var(--black);
+
+      svg {
+        fill: var(--black);
+      }
+    }
+
+    &.secondary:hover {
+      color: var(--white);
+      border-color: transparent;
+      background-color: var(--black);
+
+      svg {
+        fill: var(--white);
+      }
+    }
+
+    &.search:hover {
+      border-color: var(--black);
+
+      svg {
+        pointer-events: none;
+      }
+    }
+  }
+}

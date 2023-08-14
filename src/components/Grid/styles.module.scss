@@ -1,0 +1,21 @@
+@import '/src/styles/breakpoints.scss';
+
+.grid {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--space-medium);
+
+  display: grid;
+  column-gap: var(--space-medium);
+  grid-template-columns: repeat(4, auto);
+}
+
+@media (min-width: $desktop-breakpoint) {
+  .grid {
+    max-width: 1440px;
+    padding: 0 100px;
+
+    column-gap: var(--space-x-large);
+    grid-template-columns: repeat(12, auto);
+  }
+}
