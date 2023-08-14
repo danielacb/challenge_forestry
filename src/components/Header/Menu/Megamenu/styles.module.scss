@@ -1,0 +1,184 @@
+@import '/src/styles/breakpoints.scss';
+
+.megamenu {
+  width: 100%;
+  height: 0;
+  opacity: 0;
+  transition: 0.5s;
+  pointer-events: none;
+  background-color: var(--green-200);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.open {
+  pointer-events: auto;
+  height: auto;
+  min-height: 100vh;
+  opacity: 1;
+}
+
+.buttonContainer {
+  padding: 48px 0;
+  width: 100%;
+  grid-column: 1 / -1;
+
+  button {
+    width: 110px;
+  }
+}
+
+.menusContainer {
+  grid-column: 2 / -1;
+  display: grid;
+  gap: var(--x-large);
+  row-gap: var(--space-x-large);
+  width: calc(100% - var(--space-x-large));
+}
+
+.menu {
+  text-align: left;
+
+  li + li {
+    max-width: 237px;
+    margin-top: var(--space-medium);
+  }
+}
+
+.baseMenuLink {
+  font-size: 1.25rem;
+  text-decoration: underline;
+  text-underline-offset: 25%;
+  text-decoration-thickness: 2px;
+  position: relative;
+  display: inline-block;
+
+  svg {
+    position: absolute;
+    top: 50%;
+    opacity: 0;
+    right: -48px;
+    margin-top: 2px;
+    transition: 0.4s;
+    transform: translateY(-50%);
+    z-index: -1;
+  }
+}
+
+.nav {
+  grid-column: 1 / -2;
+  text-align: left;
+
+  a {
+    display: block;
+    margin-bottom: var(--space-small);
+    width: max-content;
+  }
+}
+
+.loginButton {
+  text-align: left;
+  margin-top: -24px;
+  margin-bottom: var(--space-xx-large);
+}
+
+.closeIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+
+  margin-left: 12px;
+  width: 20px;
+  height: 20px;
+
+  position: relative;
+  transform: rotate(45deg) translate(-2px, 1px);
+}
+
+.line {
+  width: 100%;
+  height: 3.5px;
+  background-color: var(--white);
+
+  &::before {
+    content: '';
+    position: absolute;
+    height: 20px;
+    width: 3.5px;
+    background-color: var(--white);
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.3s;
+  }
+}
+
+@media (min-width: $desktop-breakpoint) {
+  .baseMenuLink {
+    font-size: 1.375rem;
+  }
+  .menusContainer {
+    grid-column: 2 / -3;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template:
+      'a a' 1fr
+      'b b' 1fr;
+    row-gap: var(--space-medium);
+
+    .baseMenuLink {
+      width: max-content;
+
+      &:nth-child(3) {
+        grid-column: 2;
+        grid-row: 1;
+      }
+    }
+  }
+
+  .buttonContainer {
+    button {
+      width: 153px;
+    }
+  }
+
+  .loginButton {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .closeIcon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .line {
+    height: 4px;
+
+    &::before {
+      height: 24px;
+      width: 4px;
+    }
+  }
+}
+
+@media (hover: hover) {
+  .megamenu {
+    button:hover {
+      .line::before {
+        height: 0;
+      }
+    }
+  }
+
+  .baseMenuLink:hover svg {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,51 @@
+@import '/src/styles/breakpoints.scss';
+
+.wrapper {
+  padding: 48px 0;
+}
+
+.link {
+  width: 100px;
+  align-self: center;
+}
+
+.logo {
+  height: 18px;
+}
+
+.buttonsContainer {
+  width: 100%;
+  align-self: center;
+  justify-self: end;
+  grid-column: 2 / -1;
+  text-align: right;
+
+  & > button:nth-child(1),
+  & > button:nth-child(2) {
+    display: none;
+  }
+
+  button + button,
+  button + div {
+    margin-left: var(--space-medium);
+  }
+}
+
+@media (min-width: $desktop-breakpoint) {
+  .link {
+    width: 200px;
+  }
+
+  .logo {
+    height: 37px;
+  }
+
+  .buttonsContainer {
+    grid-column: 6 / -1;
+
+    & > button:nth-child(1),
+    & > button:nth-child(2) {
+      display: inline-block;
+    }
+  }
+}

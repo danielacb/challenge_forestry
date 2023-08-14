@@ -119,6 +119,19 @@ h5,
   font-size: 1rem;
 }
 
+a {
+  color: inherit;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+ul,
+ol,
+menu {
+  list-style: none;
+  padding-left: 0;
+}
+
 @media (min-width: $mobile-breakpoint) {
   h1 {
     font-size: 2.25rem;
@@ -154,5 +167,16 @@ h5,
   h5,
   .subheading {
     font-size: 1.25rem;
+  }
+  a {
+    font-size: 1.125rem;
+  }
+}
+
+@media (hover: hover) {
+  a:hover {
+    text-decoration: underline;
+    text-underline-offset: 25%;
+    text-decoration-thickness: 2px;
   }
 }
