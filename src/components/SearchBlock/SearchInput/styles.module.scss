@@ -1,0 +1,56 @@
+@import '/src/styles/breakpoints.scss';
+
+.wrapper {
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  display: block;
+  padding: 16px 24px;
+  border-radius: 12px;
+  border: 2px solid var(--black);
+  margin-bottom: var(--space-x-small);
+  outline: var(--black);
+
+  &,
+  &::placeholder {
+    font-size: 1rem;
+    line-height: 130%;
+    color: var(--black);
+    font-weight: 500;
+  }
+}
+
+@media (min-width: $mobile-breakpoint) {
+  .wrapper {
+    background-color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 24px;
+    border-radius: 0;
+    border: 2px solid var(--black);
+
+    &:focus-within {
+      outline-offset: 4px;
+      outline: 2px solid var(--black);
+    }
+  }
+
+  .input {
+    background-color: transparent;
+    padding: 0;
+    border: 0;
+    display: inline;
+    width: calc(100% - 150px);
+    margin-bottom: 0;
+    outline: 0;
+  }
+}
+
+@media (hover: hover) {
+  .wrapper button:hover svg {
+    fill: var(--black);
+    stroke: var(--black);
+  }
+}

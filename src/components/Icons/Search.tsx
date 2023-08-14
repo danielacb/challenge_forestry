@@ -41,10 +41,10 @@ export default function SearchIcon({ color = 'black', ...props }: Props) {
         clipRule="evenodd"
       />
 
-      <path
+      {/* <path
         style={{ opacity: isHovered ? 1 : 0, transition: `0.4s` }}
         d="M2 11.086a8.571 8.571 0 1 0 17.143 0 8.571 8.571 0 0 0-17.143 0Z"
-      />
+      /> */}
     </svg>
   )
 }

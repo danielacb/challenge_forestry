@@ -12,9 +12,7 @@ export default function Header() {
           <img className={styles.logo} src="/logo.svg" alt="Logo" />
         </a>
         <div className={styles.buttonsContainer}>
-          <Button variant="search" onClick={() => console.log('click')}>
-            Søk
-          </Button>
+          <Button variant="search">Søk</Button>
           <Button variant="secondary" icon={<ProfileIcon />}>
             Logg inn
           </Button>

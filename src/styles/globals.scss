@@ -26,7 +26,7 @@
   --green-200: #d0e0af;
   --green-300: #b7ca90;
   --green-500: #99b06a;
-  --beige-100: #f6e7c3;
+  --beige-100: #faefd6;
   --beige-200: #f6e7c3;
   --beige-300: #dccba2;
   --beige-500: #c5b181;
@@ -133,6 +133,10 @@ p.lead {
   font-size: 1.25rem;
 }
 
+p.body {
+  font-size: 1rem;
+}
+
 ul,
 ol,
 menu {
@@ -157,9 +161,11 @@ menu {
   .subheading {
     font-size: 1.125rem;
   }
-
   p.lead {
     font-size: 1.375rem;
+  }
+  p.body {
+    font-size: 1.125rem;
   }
 }
 
@@ -185,6 +191,9 @@ menu {
   }
   p.lead {
     font-size: 1.5rem;
+  }
+  p.body {
+    font-size: 1.25rem;
   }
 }
 
