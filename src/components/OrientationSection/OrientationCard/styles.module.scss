@@ -1,0 +1,72 @@
+@import '/src/styles/breakpoints.scss';
+
+.card {
+  display: block;
+  background-color: var(--green-200);
+  padding: 36px;
+
+  & + & {
+    margin-top: var(--space-small);
+  }
+
+  & > h3 {
+    max-width: 420px;
+    width: 100%;
+  }
+}
+
+.description {
+  p {
+    margin: var(--space-small) 0;
+    max-width: 482px;
+  }
+}
+
+.icon {
+  width: 36px;
+  height: 36px;
+}
+
+@media (min-width: $desktop-breakpoint) {
+  .card {
+    padding: 60px;
+    display: grid;
+    grid-template-columns: repeat(12, auto);
+    gap: 60px;
+
+    & + & {
+      margin-top: var(--space-medium);
+    }
+
+    & > h3 {
+      grid-column: 1 / 5;
+    }
+  }
+
+  .description {
+    display: flex;
+    gap: 100px;
+    justify-self: right;
+    grid-column: 6 / -1;
+
+    & > p {
+      margin: 0;
+    }
+  }
+
+  .icon {
+    width: 48px;
+    height: 48px;
+    flex: 0 0 auto;
+    align-self: center;
+  }
+}
+
+@media (hover: hover) {
+  .card:hover {
+    text-decoration: none;
+    .icon {
+      fill: var(--black);
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@import '/src/styles/breakpoints.scss';
+
+.wrapper {
+  grid-column: 1 / -1;
+  margin: 48px 0;
+}
+
+@media (min-width: $desktop-breakpoint) {
+  .wrapper {
+    margin: 100px 0;
+  }
+}

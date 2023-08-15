@@ -1,0 +1,29 @@
+@import '/src/styles/breakpoints.scss';
+
+.wrapper {
+  grid-column: 1 / -1;
+  margin-bottom: 48px;
+
+  & > h2 {
+    margin-bottom: var(--space-small);
+  }
+
+  & > button {
+    display: none;
+  }
+}
+
+@media (min-width: $desktop-breakpoint) {
+  .wrapper {
+    & > h2 {
+      margin-bottom: var(--space-large);
+    }
+    margin-bottom: 100px;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: var(--space-large);
+    margin-bottom: var(--space-large);
+  }
+}

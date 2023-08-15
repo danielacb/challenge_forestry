@@ -1,0 +1,79 @@
+@import '/src/styles/breakpoints.scss';
+
+.card {
+  width: 100%;
+  display: inline-block;
+  background-color: var(--beige-200);
+  padding: 36px;
+
+  & + & {
+    margin-top: var(--space-small);
+  }
+
+  & > svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  & > time {
+    display: block;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-top: var(--space-medium);
+    margin-bottom: var(--space-small);
+  }
+
+  & > p {
+    margin: var(--space-small) 0;
+  }
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 190px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
+  }
+}
+
+@media (min-width: $desktop-breakpoint) {
+  .card {
+    & + & {
+      margin-top: 0;
+    }
+
+    & > svg {
+      width: 40px;
+      height: 40px;
+    }
+
+    & > time {
+      margin-top: var(--space-large);
+      margin-bottom: var(--space-small);
+    }
+
+    & > p {
+      margin: var(--space-medium) 0;
+    }
+  }
+
+  .imageContainer {
+    height: 220px;
+  }
+}
+
+@media (hover: hover) {
+  .card:hover {
+    text-decoration: none;
+
+    & > svg {
+      fill: var(--black);
+    }
+  }
+}
