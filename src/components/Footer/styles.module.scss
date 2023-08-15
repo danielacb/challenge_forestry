@@ -1,0 +1,79 @@
+@import '/src/styles/breakpoints.scss';
+
+.footer {
+  grid-column: 1 / -1;
+  margin-top: 104px;
+  padding: 60px 0;
+}
+
+.link {
+  width: 150px;
+}
+
+.logo {
+  height: 28px;
+  margin-bottom: var(--space-large);
+}
+
+.col {
+  span {
+    display: block;
+  }
+}
+
+.text {
+  display: inline-block;
+  width: 100%;
+  font-weight: 500;
+  font-size: 1rem;
+  & + .text {
+    margin-top: var(--space-x-small);
+  }
+}
+
+.title {
+  margin-top: var(--space-medium);
+  font-size: 1.25rem;
+  line-height: 130%;
+  margin-bottom: 12px;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  gap: var(--space-medium);
+  margin-bottom: var(--space-small);
+}
+
+.credits {
+  &,
+  & > a {
+    font-size: 1rem;
+    margin-top: var(--space-large);
+  }
+}
+
+@media (min-width: $desktop-breakpoint) {
+  .footer {
+    grid-column: 1 / -5;
+  }
+
+  .title {
+    font-size: 1.375rem;
+    margin-top: 0;
+  }
+  .cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .text,
+  .credits {
+    font-size: 1.125rem;
+  }
+
+  .credits {
+    margin-top: var(--space-x-large);
+  }
+}

@@ -1,0 +1,90 @@
+@import '/src/styles/breakpoints.scss';
+
+.card {
+  display: block;
+  width: 100%;
+  padding: var(--space-large) var(--space-large) 30px;
+  background-color: var(--green-200);
+
+  & + & {
+    margin-top: var(--space-small);
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 160%;
+    margin-top: 12px;
+  }
+
+  & > svg {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+.date {
+  display: inline-block;
+  background-color: var(--black);
+  padding: var(--space-x-small) var(--space-small);
+  border-radius: var(--space-x-small);
+  color: var(--white);
+  margin-bottom: var(--space-medium);
+}
+
+.info {
+  margin: var(--space-medium) 0;
+  font-size: 0.875rem;
+  line-height: 150%;
+
+  display: flex;
+  gap: 12px;
+}
+
+@media (min-width: $desktop-breakpoint) {
+  .card {
+    padding: var(--space-x-large);
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+
+    & + & {
+      margin-top: 30px;
+    }
+
+    p {
+      font-size: 1.25rem;
+      margin-top: 0;
+    }
+
+    & > svg {
+      width: 40px;
+      height: 40px;
+      align-self: center;
+    }
+  }
+  .col {
+    padding-right: var(--space-x-large);
+
+    & + .col {
+      padding-left: var(--space-x-large);
+    }
+
+    h4 {
+      max-width: 370px;
+    }
+  }
+  .info {
+    margin-bottom: 0;
+    gap: var(--space-medium);
+  }
+}
+
+@media (hover: hover) {
+  .card:hover {
+    text-decoration: none;
+
+    & > svg {
+      fill: var(--black);
+      transition: 0.4s;
+    }
+  }
+}

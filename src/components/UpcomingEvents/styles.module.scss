@@ -1,0 +1,24 @@
+@import '/src/styles/breakpoints.scss';
+
+.wrapper {
+  grid-column: 1 / -1;
+
+  & > h2 {
+    margin-bottom: var(--space-medium);
+  }
+
+  & > button {
+    margin-top: var(--space-small);
+  }
+}
+
+@media (min-width: $desktop-breakpoint) {
+  .wrapper {
+    & > h2 {
+      margin-bottom: var(--space-large);
+    }
+    & > button {
+      margin-top: 40px;
+    }
+  }
+}

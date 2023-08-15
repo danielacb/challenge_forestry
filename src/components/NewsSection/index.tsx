@@ -15,7 +15,7 @@ export default function NewsSection() {
             datePublished="2023-04-17"
             title="Går med rekordoverskudd: – Skogeiere har vært lojale til samvirket"
             subtitle="Allskog legger bak seg et av mest innbringende år noensinne som konsern. For femte år på rad kan 7 500 skogeiere nord for Stad og Dovre få utbetalt utbytte fra samvirket."
-            link="#"
+            link="https://danielacb.com/"
           />
           <NewsCard
             imageUrl="/news-2.jpg"
@@ -23,7 +23,7 @@ export default function NewsSection() {
             datePublished="2023-04-17"
             title="Bruk rabatten din på kurs i norsk PEFC-skogstantard"
             subtitle="Skal du hogge selv og levere tømmer? Nå får alle som driver i skogen tilbud om kurs i den nye skogstandarden. Som andelseier i ALLSKOG får du kurset til rabattert pris."
-            link="#"
+            link="https://danielacb.com/"
           />
           <NewsCard
             imageUrl="/news-3.jpg"
@@ -31,7 +31,7 @@ export default function NewsSection() {
             datePublished="2023-04-17"
             title="Dette bør du vite om nye miljøhensyn i skogen "
             subtitle="Alt tømmer som ALLSKOG omsetter, er miljøsertifisert etter Norsk PEFC Skogstandard. Industrien og for forbrukerne skal vite at virket kommer fra skog drevet på bærekraftig vis. "
-            link="#"
+            link="https://danielacb.com/"
           />
         </div>
         <Button variant="secondary">Se alle nyheter</Button>
