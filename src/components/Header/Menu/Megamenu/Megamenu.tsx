@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import Button from '../../../Button'
 import Grid from '../../../Grid'
 import ArrowIcon from '../../../Icons/Arrow'
@@ -12,6 +13,14 @@ type Props = {
 }
 
 export default function Megamenu({ isOpen, closeMenu }: Props) {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'auto'
+    }
+  }, [isOpen])
+
   return (
     <div className={`${styles.megamenu} ${isOpen ? styles.open : `closed`}`}>
       <div className={styles.overlay} />

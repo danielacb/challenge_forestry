@@ -7,6 +7,7 @@
   transition: 0.5s;
   pointer-events: none;
   background-color: var(--green-200);
+  padding-bottom: var(--space-xx-large);
 
   position: absolute;
   top: 0;
@@ -17,8 +18,19 @@
 .open {
   pointer-events: auto;
   height: auto;
-  min-height: 100vh;
+  height: 100vh;
+  overflow-x: scroll;
   opacity: 1;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
 }
 
 .buttonContainer {
@@ -32,10 +44,11 @@
 }
 
 .menusContainer {
-  grid-column: 2 / -1;
+  grid-column: 2 / -2;
   display: grid;
   gap: var(--x-large);
   row-gap: var(--space-x-large);
+  grid-template-columns: 1fr;
   width: calc(100% - var(--space-x-large));
 }
 
@@ -69,6 +82,7 @@
 }
 
 .nav {
+  display: block;
   grid-column: 1 / -2;
   text-align: left;
 
