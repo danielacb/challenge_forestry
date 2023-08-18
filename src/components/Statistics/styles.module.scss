@@ -7,6 +7,44 @@
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
   gap: var(--space-x-large);
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+}
+
+.dots {
+  grid-column: 1 / -1;
+  text-align: center;
+  width: 100%;
+  max-width: 84px;
+  margin: 0 auto 48px;
+  display: flex;
+  gap: var(--space-medium);
+
+  button {
+    width: 10px;
+    height: 10px;
+    background-color: var(--black);
+    border: 0;
+    padding: 0;
+    opacity: 0.5;
+    border-radius: 50%;
+    transition: 0.4s;
+
+    &:global {
+      &.active {
+        transform: scale(1.5);
+        opacity: 1;
+      }
+    }
+  }
 }
 
 @media (min-width: $desktop-breakpoint) {
@@ -15,5 +53,8 @@
     overflow-x: auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+  }
+  .dots {
+    display: none;
   }
 }
