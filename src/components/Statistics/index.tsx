@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Grid from '../Grid'
 import StatisticsCard from './StatisticsCard/intex'
 import styles from './styles.module.scss'
@@ -6,6 +6,22 @@ import styles from './styles.module.scss'
 export default function Statistics() {
   const [activeSlide, setActiveSlide] = useState(0)
   const slidesRef = useRef<HTMLElement>(null)
+
+  function onSlidesScroll() {
+    const slides = slidesRef.current
+    if (slides) {
+      const slideWidth = slides.children[0].clientWidth
+      const scrollLeft = slides.scrollLeft
+      setActiveSlide(Math.floor(scrollLeft / slideWidth))
+    }
+  }
+
+  useEffect(() => {
+    const slides = slidesRef.current
+    slides?.addEventListener('scroll', onSlidesScroll)
+
+    return () => slides?.removeEventListener('scroll', onSlidesScroll)
+  }, [])
 
   function navigateToSlide(index: number) {
     const slides = slidesRef.current
