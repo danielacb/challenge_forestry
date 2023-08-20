@@ -7,10 +7,6 @@
   & > h2 {
     margin-bottom: var(--space-small);
   }
-
-  & > button {
-    display: none;
-  }
 }
 
 @media (min-width: $desktop-breakpoint) {

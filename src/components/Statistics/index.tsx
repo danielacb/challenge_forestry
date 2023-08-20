@@ -1,11 +1,14 @@
 import { useEffect, useRef, useState } from 'react'
+import { useTranslation } from 'react-i18next'
+
 import Grid from '../Grid'
-import StatisticsCard from './StatisticsCard/intex'
+import StatisticsCard from './StatisticsCard'
 import styles from './styles.module.scss'
 
 export default function Statistics() {
   const [activeSlide, setActiveSlide] = useState(0)
   const slidesRef = useRef<HTMLElement>(null)
+  const { t } = useTranslation()
 
   function onSlidesScroll() {
     const slides = slidesRef.current
@@ -38,7 +41,7 @@ export default function Statistics() {
     }
   }
 
-  const slideDots = Array.from({ length: 3 }, (_, index) => (
+  const slideDots = [0, 1, 2].map((index) => (
     <button
       key={index}
       className={activeSlide === index ? 'active' : ''}
@@ -49,9 +52,13 @@ export default function Statistics() {
   return (
     <Grid>
       <section ref={slidesRef} className={styles.statistics}>
-        <StatisticsCard number={70} label="skogeierlag" />
-        <StatisticsCard number={7.6} label="andelseiere" />
-        <StatisticsCard number="1 million" label="skogeierlag" />
+        {[0, 1, 2].map((index) => (
+          <StatisticsCard
+            key={index}
+            number={t(`statistics.${index}.number`)}
+            label={t(`statistics.${index}.label`)}
+          />
+        ))}
       </section>
       <div className={styles.dots}>{slideDots}</div>
     </Grid>

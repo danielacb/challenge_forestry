@@ -36,7 +36,7 @@ export default function EventCard({
         </div>
         <div className={styles.info}>
           <CalendarIcon />
-          {location}
+          {formatDate(date)}
         </div>
         <div className={styles.info}>
           <AlarmIcon />

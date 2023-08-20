@@ -32,7 +32,7 @@ export const topLinks = [
 
 export const bottomLinks = [
   'Finn din skogbruksleder',
-  'Om Allskog',
+  'Om DCB',
   'Arrangementer',
   'Aktuelt',
 ]

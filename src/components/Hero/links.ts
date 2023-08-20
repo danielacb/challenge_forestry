@@ -3,7 +3,7 @@ export const links = [
   'Veiledning',
   'Bli andelseier',
   'Finn skogbruksleder',
-  'Om Allskog',
+  'Om DCB',
   'Bærekraft og miljø',
   'Arrangementer',
   'Aktuelt',

@@ -1,10 +1,14 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
+
 import Megamenu from './Megamenu/Megamenu'
 import Button from '../../Button'
 
 import styles from './styles.module.scss'
 
 export default function Menu() {
+  const { t } = useTranslation()
+
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   return (
     <div className={styles.wrapper}>
@@ -14,7 +18,7 @@ export default function Menu() {
         icon={<MenuIconHamburger />}
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       >
-        Meny
+        {t('menu.menu')}
       </Button>
     </div>
   )

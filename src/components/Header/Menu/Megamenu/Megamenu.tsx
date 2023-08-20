@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next'
+
 import { useEffect } from 'react'
 import Button from '../../../Button'
 import Grid from '../../../Grid'
@@ -13,6 +15,8 @@ type Props = {
 }
 
 export default function Megamenu({ isOpen, closeMenu }: Props) {
+  const { t } = useTranslation()
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden'
@@ -28,36 +32,38 @@ export default function Megamenu({ isOpen, closeMenu }: Props) {
         <Grid>
           <div className={styles.buttonContainer}>
             <Button onClick={closeMenu} icon={<MenuIconClose />}>
-              Lukk
+              {t('menu.close')}
             </Button>
           </div>
           <div className={styles.menusContainer}>
-            {topLinks.map((links) => (
+            {topLinks.map((links, linksIndex) => (
               <nav key={links.baseLink} className={styles.menu}>
                 <li>
                   <a href="#" className={styles.baseMenuLink}>
-                    {links.baseLink}
+                    {t(`megamenu.topLinks.${linksIndex}.baseLink`)}
                     <ArrowIcon size="36" />
                   </a>
                 </li>
-                {links.links.map((link) => (
+                {links.links.map((link, linkIndex) => (
                   <li key={link}>
-                    <a href="#">{link}</a>
+                    <a href="#">
+                      {t(`megamenu.topLinks.${linksIndex}.links.${linkIndex}`)}
+                    </a>
                   </li>
                 ))}
               </nav>
             ))}
             <nav className={styles.nav}>
-              {bottomLinks.map((link) => (
+              {bottomLinks.map((link, index) => (
                 <a href="#" key={link} className={styles.baseMenuLink}>
-                  {link}
+                  {t(`megamenu.bottomLinks.${index}`)}
                   <ArrowIcon size="36" />
                 </a>
               ))}
             </nav>
             <div className={styles.loginButton}>
               <Button variant="secondary" icon={<ProfileIcon />}>
-                Logg inn
+                {t('menu.signIn')}
               </Button>
             </div>
           </div>

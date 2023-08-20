@@ -1,26 +1,13 @@
+import i18next from 'i18next'
+
 export default function formatDate(
   date: string | [string, string],
   addYear = false
 ): string {
-  const monthNames = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-  ]
-
   const formatDateToString = (dateString: string) => {
     const currentDate = new Date(dateString)
     const day = currentDate.getUTCDate()
-    const month = monthNames[currentDate.getUTCMonth()]
+    const month = i18next.t(`monthNames.${currentDate.getUTCMonth()}`)
     const year = currentDate.getUTCFullYear()
 
     return { day, month, year }

@@ -1,3 +1,5 @@
+import './i18n'
+
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Statistics from './components/Statistics'
